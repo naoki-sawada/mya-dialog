@@ -1,17 +1,25 @@
 import { Info_onDialog } from './Info_onDialog';
 import { FlowText } from '../functions/FlowText';
 import colors from '../config/Colors';
+import imgWeather from '../data/icon/weather.png';
+import imgSunnyStart from '../data/weather/sunny/sunny001.png';
+import imgSunnyEnd from '../data/weather/sunny/sunny003.png';
+import imgRainyStart from '../data/weather/rainy/rainy-01.png';
+import imgRainyEnd from '../data/weather/rainy/rainy-25.png';
+import imgCloudy from '../data/weather/cloudy/cloudy.png';
+import imgCloudSunny from '../data/weather/cloud_sunny/cloud_sunny.png';
+import imgThunderstorm from '../data/weather/thunderstorm/thunderstorm.png';
 
 export class Weather extends Info_onDialog {
   constructor(p) {
     super(p);
-    this.icon = this.p.loadImage('../assets/img/icon/weather.png');
+    this.icon = this.p.loadImage(imgWeather);
     this.weatherIcons = {
-      sunny: this.p.loadAnimation('../assets/img/weather/sunny/sunny001.png', '../assets/img/weather/sunny/sunny003.png'),
-      rainy: this.p.loadAnimation('../assets/img/weather/rainy/rainy-01.png', '../assets/img/weather/rainy/rainy-25.png'),
-      cloudy: this.p.loadImage('../assets/img/weather/cloudy/cloudy.png'),
-      cloudSunny: this.p.loadImage('../assets/img/weather/cloud_sunny/cloud_sunny.png'),
-      thunderstorm: this.p.loadImage('../assets/img/weather/thunderstorm/thunderstorm.png'),
+      sunny: this.p.loadAnimation(imgSunnyStart, imgSunnyEnd),
+      rainy: this.p.loadAnimation(imgRainyStart, imgRainyEnd),
+      cloudy: this.p.loadImage(imgCloudy),
+      cloudSunny: this.p.loadImage(imgCloudSunny),
+      thunderstorm: this.p.loadImage(imgThunderstorm),
       snow: '',
       mist: ''
     };

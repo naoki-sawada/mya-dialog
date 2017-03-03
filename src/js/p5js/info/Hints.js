@@ -4,11 +4,12 @@ import combination from '../functions/Combination';
 import colors from '../config/Colors';
 import hintlistJP from '../config/hints/jp/HintList';
 //import hintlistEN from '../config/hints/en/HintList';
+import imgBulb from '../data/icon/bulb.png';
 
 export class Hints extends Info_onDialog {
   constructor(p, lang) {
     super(p);
-    this.icon = this.p.loadImage('../assets/img/icon/bulb.png');
+    this.icon = this.p.loadImage(imgBulb);
     this.flowtext = new FlowText(this.p, 2.0);
     this.once = false;
     this.setLang(lang);

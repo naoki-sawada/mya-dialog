@@ -1,7 +1,7 @@
 import { Hints } from './Hints';
 // import { Notice } from './Notice';
 import { Time } from './Time';
-import { Weather } from './Weather';
+// import { Weather } from './Weather';
 
 export class Info {
   constructor(p, lang) {
@@ -9,7 +9,7 @@ export class Info {
     this.hints = new Hints(this.p, lang);
     // this.notice = new Notice(this.p);
     this.time = new Time(this.p);
-    this.weather = new Weather(this.p);
+    // this.weather = new Weather(this.p);
     this.states = { disp: 'hints', state: 'close' };
     this.options = {};
     //this.random_list = ['hints', 'notice'];
@@ -25,9 +25,9 @@ export class Info {
       case 'time':
         this.time.disp(this.states.state, this.options);
         break;
-      case 'weather':
-        this.weather.disp(this.states.state, this.options);
-        break;
+      // case 'weather':
+      //   this.weather.disp(this.states.state, this.options);
+      //   break;
     }
   }
   renew(obj, options) {

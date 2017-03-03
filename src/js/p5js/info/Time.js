@@ -1,11 +1,12 @@
 import { Info_onDialog } from './Info_onDialog';
 import { FlowText } from '../functions/FlowText';
 import colors from '../config/Colors';
+import imgTime from '../data/icon/time.png';
 
 export class Time extends Info_onDialog {
   constructor(p){
     super(p);
-    this.icon = this.p.loadImage('../assets/img/icon/time.png');
+    this.icon = this.p.loadImage(imgTime);
     this.flowtext = new FlowText(this.p, 2.0);
     this.once = false;
   }

@@ -22,6 +22,10 @@ module.exports = {
         presets: ['es2015']
       }
     },
+    {
+      test: /\.png$/,
+      loader: 'url-loader'
+    },
     ]
   },
   postcss: [ ],
