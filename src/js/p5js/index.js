@@ -58,7 +58,7 @@ function sketch(p) {
     if (p.keyCode === p.DOWN_ARROW) {
       resultRec({ text: 'hello' });
     } else if (p.keyCode === p.RIGHT_ARROW) {
-      resultRec({ text: '今日の天気は' });
+      resultRec({ text: '今何時' });
     }
   };
 
@@ -69,7 +69,7 @@ function sketch(p) {
     dialogtext.reset_usrmsg();
   };
 
-  function info_states(set, options) {
+  const info_states = (set, options) => {
     if (!states.visual.info.disp) {
       states.visual.info.disp = true;
       states.visual.info.now = ( set ? set : p.random(['hints']));
@@ -79,7 +79,7 @@ function sketch(p) {
     }
   }
 
-  function resultRec(arg) {
+  const resultRec = (arg) => {
     console.log('Recgnition Success!: ' + arg.text);
     timer.reset();
     states.utterance.usr = arg.text;
@@ -88,11 +88,11 @@ function sketch(p) {
     states.visual.info.disp = false;
 
     dummyMessage(res);
-  }
+  };
 
-  function failedRec(err) {
+  const failedRec = (err) => {
     console.log(err);
-  }
+  };
 
   const dummyMessage = (data) => {
     states.utterance.sys = '';

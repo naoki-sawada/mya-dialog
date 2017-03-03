@@ -4,7 +4,7 @@
 export var visual = {
   dialog: true,
   info: {
-    disp: false,
+    disp: true,
     now: 'hints',
     options: {}
   }

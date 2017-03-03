@@ -5,13 +5,11 @@ export class DummyResponse {
 
   dummyResponse(text) {
     let res = {};
-    if (text === '今日の天気は') {
+    if (text === '今何時') {
       res = {
-        utterance: '今日の天気は曇りです。',
+        utterance: '',
         uiCommand: {
-          place: 'Wako',
-          day: '2/28',
-          weatherID: '2'
+          time: 'time'
         },
         voice: 'notice'
       };
@@ -28,8 +26,8 @@ export class DummyResponse {
 
   _randomRes() {
     let randomRes = [];
-    randomRes = randomRes.concat(this._repeatArr('short', 7));
-    randomRes = randomRes.concat(this._repeatArr('long', 7));
+    randomRes = randomRes.concat(this._repeatArr('short', 8));
+    randomRes = randomRes.concat(this._repeatArr('long', 8));
     randomRes = randomRes.concat(this._repeatArr('none', 1));
     return this.p.random(randomRes);
   }

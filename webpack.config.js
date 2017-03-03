@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: __dirname + '/src/js/app.js',
@@ -24,6 +25,12 @@ module.exports = {
     ]
   },
   postcss: [ ],
-  plugins: [ ],
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ],
   externals: [ ]
 }
